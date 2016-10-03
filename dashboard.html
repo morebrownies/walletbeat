@@ -1,0 +1,97 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato">
+    <title>Walletbeat</title>
+    <link href="assets/css/ui-kit.css" rel="stylesheet">
+    <script src="assets/javascript/jquery.min.js"></script>
+    <script src="assets/javascript/jquery-ui.min.js"></script>
+    <script src="assets/javascript/jquery.easing.compatibility.js"></script>
+    <script src="assets/javascript/jquery.easing.1.3.js"></script>
+    <script src="assets/javascript/moment.min.js"></script>
+    <script src="assets/javascript/site.js"></script>
+    <script src="assets/javascript/highcharts.js"></script>
+  </head>
+
+  <body>
+    <div class="overlay ui-visibility-hidden" style="background: rgba(0,0,0,.85); height: 100%; width: 100%; position: fixed; z-index: 50;"></div>
+    <div class="header"><div class="container" style="text-align:left;"><a href="index.html" class="no-underline">walletbeat</a></div></div>
+    <section class="container">
+      <div class="stats" style="margin-top: 2000px">
+        <div class="stat current-price">
+          <div class="info" title="Powered by CoinDesk - www.coindesk.com/price/">i</div>
+          <div class="chart" id="current-price-chart"></div>
+          <div class="value"></div>
+          <div class="title">BTC Current Price</div>
+        </div>
+
+        <div class="stat total-bitcoins">
+          <div class="chart" id="total-bitcoins-chart"></div>
+          <div class="value"></div>
+          <div class="title">Total Bitcoins</div>
+        </div>
+
+        <div class="stat total-value" style="margin-right: 0">
+          <div class="chart" id="total-value-chart"></div>
+          <div class="value"></div>
+          <div class="title">Total Value</div>
+        </div>
+
+        <div class="stat ui-position-relative" style="width: 732px; margin-top: 30px; text-align: left">
+          <h2 class="ui-position-float-left">Wallets</h2>
+          <div class="ui-position-float-right ui-position-margin-right-20px" style="margin-top: 19px;"><a style="color: #6A8C43;" class="add-another-wallet">Add another address</a></div>
+          <ul id="wallets" class="ui-scroll-overflow" style="height: 200px; clear: both; margin-top: 10px"></ul>
+        </div>
+
+        <div class="stat donate" style="vertical-align: top; margin-top: 30px; margin-right: 0">
+          <div class="title ui-position-text-align-center" style="margin-right: 0; font-size: 14px; letter-spacing: .75; color: #fff; margin-top: 25px">Love wb? Drop me some coin :)</div>
+          <img class="ui-position-margin-top-20px" src="assets/images/qr.png" style="width:160px" />
+          <div style="font-size: 15px; margin-top: 10px; color: #5e5e5e">1LYwbvDVGBNCL2n4BRpi3fT5bS5i6NpmFe</div>
+        </div>
+
+        <div class="stat ui-position-relative" class="stat" style="width: 732px; margin-top: 30px; text-align: left; display: inline-block">
+          <h2>Transactions</h2>
+          <span class="no-transactions ui-position-margin-left-20px" style="font-size: 13px">There hasn't been any transactions</span>
+          <ul id="transactions" class="ui-scroll-overflow" style="height: 200px;"></ul>
+        </div>
+
+        <div class="stat total-transactions" style="vertical-align: top; margin-top: 30px; margin-right: 0">
+          <div class="chart" style="border-bottom: solid 1px #464646"></div>
+          <div class="value" style="font-size: 24px; margin-top: 8px"></div>
+          <div class="title">Coming soon</div>
+        </div>
+      </div>
+
+      <div class="new-key ui-visibility-hidden ui-position-absolute" style="position: absolute; top: 100px; width: 600px; height: 300px; left: 50%; margin-left: -350px; top: 50%; margin-top: -200px; background-color: #222222; z-index: 60;">
+        <div class="adding-new-key">
+          <div class="close-overlay" style="position: absolute; top: 15px; right: 15px; cursor: pointer"><img src="assets/images/close.png" style="width: 12px" /></div>
+          <h1 class="overlay-heading" style="margin-top: 80px; font-size: 28px;">Now, add a second Bitcoin address</h1>
+          <div class="ui-position-inline-block">
+            <div class="input-holder ui-position-float-left" style="margin-top: 10px">
+              <input type="text" class="input-public-key large-input ui-position-margin-top-20px" placeholder="Enter a public key..." autofocus style="margin-right: 10px;" />
+            </div>
+            <button id="button-add-key" class="ui-position-margin-top-30px ui-position-float-left">Done</button>
+          </div>
+        </div>
+        <div class="you-got-it ui-visibility-hidden" style="text-align: center;">
+          <div class="close-overlay" style="position: absolute; top: 15px; right: 15px; cursor: pointer"><img src="assets/images/close.png" style="width: 12px" /></div>
+          <h1 class="overlay-heading" style="margin-top: 80px; font-size: 28px;">You're getting the hang of this!</h1>
+          <p style="padding: 20px; color: #5E5E5E; line-height: 18px;">Your dashboard is now presenting data from all of your addresses at once. If you want, you can continue to add more addresses to your dashboard.</p>
+          <button class="ui-position-margin-top-30px close-overlay" style="margin: auto">Ok</button>   
+        </div>
+      </div>
+
+    </section>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-55850058-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+
+  </body>
+
+</html>
